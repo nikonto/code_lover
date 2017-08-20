@@ -2,45 +2,53 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package vecationprectice;
+package DataStructure;
 
 /**
  *
  * @author Nikhil
  */
-public class LinkedList
-{
-	Node head;
-
-	static class Node
-	{
-		int data;
-		Node next;
-		Node(int d)
-		{
-			data =d;
-			next = null;
-		}
-	}
-		public void printList()
-		{
-			Node n =head;
-			while(n!= null)
-			{
-				System.out.println(n.data + "");
-				n = n.next;
-			}
-		}
-		public static void main(String[] args)
-		{
-			LinkedList llist = new LinkedList();
-			llist.head = new Node(1);
-			Node second = new Node(2);
-			Node third = new Node(3);
-
-			llist.head.next = second;
-			second.next = third;
-
-		}
-	
+public class LinkedList {
+    
+   static class Node{
+     int data;
+     Node next;
+     Node(int data)
+     {
+         this.data = data;
+         next = null;
+     }
+     Node head;
+     public void add(int data, Node new_node)
+     {
+         Node p;
+         p = head;
+         
+         new_node = new Node(data);
+         
+         p.next = new_node;
+     }
+     
+     //for traversing
+     
+     public void traverse()
+     {
+         if(head.next == null)
+         {
+             System.out.println("Only Head");
+         }
+             
+         else
+         {
+             while(head.next!=null)
+             {
+                 System.out.println(head.data);
+             }
+         }
+     }
+     
+     
+     
+     
+}
 }
